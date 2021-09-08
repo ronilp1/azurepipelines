@@ -150,7 +150,7 @@ resource "azurerm_log_analytics_datasource_windows_performance_counter" "mem_2" 
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "keyvault_1" {
-  name                        = "${local.res_name}-kv-1"
+  name                        = "ronil-keyvault-00001"
   location                    = data.azurerm_resource_group.resourcegroup_1.location
   resource_group_name         = data.azurerm_resource_group.resourcegroup_1.name
   enabled_for_disk_encryption = true
