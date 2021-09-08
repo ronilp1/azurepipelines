@@ -20,11 +20,11 @@ stages:
       inputs:
         command: 'init'
         backendType: 'azurerm'
-        backendServiceArm: 'terraform-sp-63498'
+        backendServiceArm: 'terraform-github-actions'
         ensureBackend: true
-        backendAzureRmResourceGroupName: 'max-dev-eastus-rg-1'
+        backendAzureRmResourceGroupName: 'Terraform-Github-Actions'
         backendAzureRmResourceGroupLocation: 'eastus'
-        backendAzureRmStorageAccountName: 'maxstorageacc001'
+        backendAzureRmStorageAccountName: 'terraformgtactions'
         backendAzureRmStorageAccountSku: 'Standard_LRS'
         backendAzureRmContainerName: 'tfstates'
         backendAzureRmKey: 'dev-tfstate'
@@ -34,7 +34,7 @@ stages:
       displayName: Terraform validate
       inputs:
         command: 'validate'
-        environmentServiceName: 'terraform-sp-63498'
+        environmentServiceName: 'terraform-github-actions'
         allowTelemetryCollection: false
 
 - stage: terraform_plan
@@ -53,11 +53,11 @@ stages:
       inputs:
         command: 'init'
         backendType: 'azurerm'
-        backendServiceArm: 'terraform-sp-63498'
+        backendServiceArm: 'terraform-github-actions'
         ensureBackend: true
-        backendAzureRmResourceGroupName: 'max-dev-eastus-rg-1'
+        backendAzureRmResourceGroupName: 'Terraform-Github-Actions'
         backendAzureRmResourceGroupLocation: 'eastus'
-        backendAzureRmStorageAccountName: 'maxstorageacc001'
+        backendAzureRmStorageAccountName: 'terraformgtactions'
         backendAzureRmStorageAccountSku: 'Standard_LRS'
         backendAzureRmContainerName: 'tfstates'
         backendAzureRmKey: 'dev-tfstate'
@@ -67,7 +67,7 @@ stages:
       displayName: Terraform plan
       inputs:
         command: 'plan'
-        environmentServiceName: 'terraform-sp-63498'
+        environmentServiceName: 'terraform-github-actions'
         allowTelemetryCollection: false
         commandOptions: '-var-file="dev/main.tfvars"'
   
@@ -87,11 +87,11 @@ stages:
       inputs:
         command: 'init'
         backendType: 'azurerm'
-        backendServiceArm: 'terraform-sp-63498'
+        backendServiceArm: 'terraform-github-actions'
         ensureBackend: true
-        backendAzureRmResourceGroupName: 'max-dev-eastus-rg-1'
+        backendAzureRmResourceGroupName: 'Terraform-Github-Actions'
         backendAzureRmResourceGroupLocation: 'eastus'
-        backendAzureRmStorageAccountName: 'maxstorageacc001'
+        backendAzureRmStorageAccountName: 'terraformgtactions'
         backendAzureRmStorageAccountSku: 'Standard_LRS'
         backendAzureRmContainerName: 'tfstates'
         backendAzureRmKey: 'dev-tfstate'
@@ -101,6 +101,6 @@ stages:
       displayName: Terraform apply
       inputs:
         command: 'apply'
-        environmentServiceName: 'terraform-sp-63498'
+        environmentServiceName: 'terraform-github-actions'
         commandOptions: '-var-file="dev/main.tfvars"'
         allowTelemetryCollection: false
